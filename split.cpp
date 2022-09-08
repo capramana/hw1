@@ -18,6 +18,21 @@ void split(Node*& in, Node*& odds, Node*& evens)
 {
   /* Add code here */
 // WRITE YOUR CODE HERE
+  Node* head = in;
+  Node* odd = NULL;
+  Node* evens = NULL;
+
+  if in->next == nullptr { // If null (no more)
+    return
+  };
+  else if in % 2 != 0 { // If odd
+    odd->value = in->value;
+  };
+  else { // If even
+    evens->value = in->value;
+  }
+  // Recurse
+  split(in->head, odd->next, evens->next);
 
 }
 
